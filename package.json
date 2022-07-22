@@ -17,10 +17,11 @@
     "test:coverage": "jest --runInBand --coverage",
     "lint:scripts": "eslint . --ext .ts",
     "lint:styles": "stylelint ./**/*.{css,scss}",
+    "lint": "yarn lint:scripts && yarn lint:styles",
     "commit": "commit",
     "format:scripts": "prettier . --write",
     "format:styles": "stylelint ./**/*.{css,scss} --fix",
-    "format": "npm run format:scripts && npm run format:styles"
+    "format": "yarn format:scripts && yarn format:styles"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
@@ -34,7 +35,6 @@
     "dts-bundle-generator": "^6.5.0",
     "eslint": "^8.11.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.4",
     "jest": "^27.5.1",
     "lint-staged": "^12.3.7",
