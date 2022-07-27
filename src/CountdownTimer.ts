@@ -95,7 +95,7 @@ export class CountdownTimer {
   }
 
   private _init(): void {
-    // this.update();
+    this.update();
   }
 
   private _updateTimeUnits(distance: number) {
