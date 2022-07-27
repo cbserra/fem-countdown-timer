@@ -148,3 +148,5 @@ const removeClassAfterTimeout = (
 };
 
 runCountdownTimer();
+
+export {};
