@@ -1,43 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@700&family=Red+Hat+Text:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@700&family=Red+Hat+Text:wght@700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-
-  html,body {
-    @apply m-0 p-0 font-bold text-base antialiased;
+  html,
+  body {
+    @apply m-0 p-0 text-base font-bold antialiased;
   }
 
   body {
-    @apply flex flex-col items-center justify-center bg-very-dark-blue bg-stars text-white w-full min-h-screen;
+    @apply flex min-h-screen w-full flex-col items-center justify-center bg-very-dark-blue bg-stars text-white;
   }
 
   h1 {
-    @apply flex flex-grow items-end justify-center w-full text-heading uppercase text-center px-6;
+    @apply flex w-full flex-grow items-end justify-center px-6 text-center text-heading uppercase;
   }
 
   main {
-    @apply flex items-start justify-center flex-grow w-full gap-x-[1.6rem] max-w-[68.8rem] px-6;
+    @apply flex w-full max-w-[68.8rem] flex-grow items-start justify-center gap-x-[1.6rem] px-6;
   }
 
   footer {
-    @apply flex overflow-hidden ;
+    @apply flex overflow-hidden;
   }
   footer img {
-    @apply object-cover object-center
+    @apply object-cover object-center;
   }
 }
 
 @layer components {
-
   .time-unit-container {
-    @apply flex flex-col items-center justify-center w-full h-full gap-y-4;
+    @apply flex h-full w-full flex-col items-center justify-center gap-y-4;
   }
   .time-unit {
-    @apply flex flex-col items-center justify-center bg-dark-desaturated-blue rounded-[4px] relative;
-    @apply after:absolute after:bg-very-dark-mostly-black-blue after:rounded-lg after:-bottom-2 after:-z-50 after:h-8 after:w-full after:border-b-4 after:border-very-dark-mostly-black-blue;
+    @apply relative flex flex-col items-center justify-center rounded-[4px] bg-dark-desaturated-blue;
+    @apply after:absolute after:-bottom-2 after:-z-50 after:h-8 after:w-full after:rounded-lg after:border-b-4 after:border-very-dark-mostly-black-blue after:bg-very-dark-mostly-black-blue;
   }
 
   .time-unit__top {
@@ -49,9 +48,9 @@
   }
 
   .time-unit__value {
-    @apply flex text-center text-soft-red text-3xl font-bold text-time w-full font-mono px-[1.4rem];
-    @apply before:absolute before:h-1/2 before:w-full before:left-0 before:top-0 before:bg-black before:bg-opacity-20 before:rounded-tl-[4px] before:rounded-tr-[4px] before:border-b-[1px] before:border-b-black before:border-opacity-20;
-    
+    @apply flex w-full px-[1.4rem] text-center font-mono text-3xl text-time font-bold text-soft-red;
+    @apply before:absolute before:left-0 before:top-0 before:h-1/2 before:w-full before:rounded-tl-[4px] before:rounded-tr-[4px] before:border-b-[1px] before:border-b-black before:border-opacity-20 before:bg-black before:bg-opacity-20;
+
     transform: rotateX(0);
     transition: 0.6s;
     transform-style: preserve-3d;
@@ -63,7 +62,6 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-direction: normal;
-
   }
 
   .time-unit__value--flipped:after {
@@ -74,9 +72,9 @@
 
   .time-unit__line {
     @apply absolute;
-    @apply  h-[1px] w-full z-50;
-    @apply before:bg-very-dark-mostly-black-blue before:absolute before:rounded-full before:w-[6px] before:h-[6px] before:-top-[3px] before:-left-[3px];
-    @apply after:bg-very-dark-mostly-black-blue after:absolute after:rounded-full after:w-[6px] after:h-[6px] after:-top-[3px] after:-right-[3px];
+    @apply z-50 h-[1px] w-full;
+    @apply before:absolute before:-top-[3px] before:-left-[3px] before:h-[6px] before:w-[6px] before:rounded-full before:bg-very-dark-mostly-black-blue;
+    @apply after:absolute after:-top-[3px] after:-right-[3px] after:h-[6px] after:w-[6px] after:rounded-full after:bg-very-dark-mostly-black-blue;
     /* @apply  before:h-1/2 before:w-full; */
     /* mix-blend-mode: normal;
     border-radius: 0px 0px 4px 4px;
@@ -84,7 +82,7 @@
   }
 
   .time-unit__label {
-    @apply font-bold text-center text-grayish-blue text-unit uppercase;
+    @apply text-center text-unit font-bold uppercase text-grayish-blue;
   }
 }
 

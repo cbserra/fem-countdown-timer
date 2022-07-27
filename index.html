@@ -1,101 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Launch countdown timer</title>
-<link rel="stylesheet" href="./src/style.css">
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-  <script src='./dist/fem-countdown-timer.mjs' defer></script>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <h1>We're launching soon</h1>
-<!-- main - countdown container-->
-<main>
-  <div class="time-unit-container">
-    <div class="time-unit days">
-      <div id="days" class="time-unit__top time-unit__value"></div>
-      <div class="time-unit__bottom"></div>
-      <div class="time-unit__back">
-        <div class="time-unit__bottom"></div>
-      </div>
-      <!-- <div class="time-unit__value">08</div> -->
-      <!-- <div class="time-unit__line"></div> -->
-      <!-- <div class="time-unit__bot"></div> -->
+    <title>Frontend Mentor | Launch countdown timer</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <!-- <script src="./dist/index.js" defer></script> -->
+    <script src="./src/SimpleTimer.js" defer></script>
+  </head>
+  <body>
+    <h1>We're launching soon</h1>
+    <!-- main - countdown container-->
+    <main>
+      <div class="simple-timer flip-clock">
+        <!-- Days Container -->
+        <div class="time-unit-container flip">
+          <div class="time-unit days">
+            <!-- <div id="days" class="time-unit__top time-unit__value">00</div>
+            <div class="time-unit__bottom"></div>
+            <div class="time-unit__back">
+              <div class="time-unit__bottom"></div>
+            </div> -->
+            <div class="time-unit__top">&nbsp;</div>
+            <div id="days" class="time-unit__value">08</div>
+            <div class="time-unit__line"></div>
+            <div class="time-unit__bot"></div>
+          </div>
+          <div class="time-unit__label">Days</div>
+        </div>
+        <!-- Hours Container -->
+        <div class="time-unit-container flip">
+          <div class="time-unit hours">
+            <!-- <div id="hours" class="time-unit__top time-unit__value">01</div>
+            <div class="time-unit__bottom"></div>
+            <div class="time-unit__back">
+              <div class="time-unit__bottom"></div>
+            </div> -->
 
-    </div>
-    <div class="time-unit__label">
-      Days
-    </div>
-  </div>
-  <div class="time-unit-container">
-    <div class="time-unit hours">
-      <div id="hours" class="time-unit__top time-unit__value"></div>
-      <div class="time-unit__bottom"></div>
-      <div class="time-unit__back">
-        <div class="time-unit__bottom"></div>
+            <div class="time-unit__top">&nbsp;</div>
+            <div id="hours" class="time-unit__value">23</div>
+            <div class="time-unit__line"></div>
+            <div class="time-unit__bot"></div>
+          </div>
+          <div class="time-unit__label">Hours</div>
+        </div>
+        <!-- Minutes Container -->
+        <div class="time-unit-container flip">
+          <div class="time-unit minutes">
+            <!-- <div id="minutes" class="time-unit__top time-unit__value">02</div>
+            <div class="time-unit__bottom"></div>
+            <div class="time-unit__back">
+              <div class="time-unit__bottom"></div> 
+            </div>  -->
+            <div class="time-unit__top">&nbsp;</div>
+            <div id="minutes" class="time-unit__value">55</div>
+            <div class="time-unit__line"></div>
+            <div class="time-unit__bot"></div>
+          </div>
+          <div class="time-unit__label">Minutes</div>
+        </div>
+        <!-- Seconds Container -->
+        <div class="time-unit-container flip">
+          <div class="time-unit seconds">
+            <!-- <div id="seconds" class="time-unit__top time-unit__value">03</div>
+            <div class="time-unit__bottom"></div>
+            <div class="time-unit__back">
+              <div class="time-unit__bottom"></div>
+            </div> -->
+            <div class="time-unit__top"></div>
+            <div id="seconds" class="time-unit__value">41</div>
+            <div class="time-unit__line"></div>
+            <div class="time-unit__bot"></div>
+          </div>
+          <div class="time-unit__label">Seconds</div>
+        </div>
+        
       </div>
+    </main>
+    <!-- footer -->
+    <footer>
+      <img src="images/pattern-hills.svg" alt="hills" class="hills" />
+    </footer>
 
-      <!-- <div class="time-unit__top">&nbsp;</div> -->
-      <!-- <div id="hours" class="time-unit__value">23</div> -->
-      <!-- <div class="time-unit__line"></div> -->
-      <!-- <div class="time-unit__bot"></div> -->
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
     </div>
-    <div class="time-unit__label">
-      Hours
-    </div>
-  </div>
-  <div class="time-unit-container">
-    <div class="time-unit minutes">
-      <div id="minutes" class="time-unit__top time-unit__value"></div>
-      <div class="time-unit__bottom"></div>
-      <div class="time-unit__back">
-        <div class="time-unit__bottom"></div>
-      </div>
-      <!-- <div class="time-unit__top">&nbsp;</div> -->
-      <!-- <div id="minutes" class="time-unit__value">55</div> -->
-      <!-- <div class="time-unit__line"></div> -->
-      <!-- <div class="time-unit__bot"></div> -->
-    </div>
-    
-    <div class="time-unit__label">
-        Minutes
-    </div>
-  </div>
-  <div class="time-unit-container">
-    <div class="time-unit seconds">
-      <div id="seconds" class="time-unit__top time-unit__value"></div>
-      <div class="time-unit__bottom"></div>
-      <div class="time-unit__back">
-        <div class="time-unit__bottom"></div>
-      </div>
-      <!-- <div class="time-unit__top">&nbsp;</div> -->
-      <!-- <div id="seconds" class="time-unit__value">41</div> -->
-      <!-- <div class="time-unit__line"></div> -->
-      <!-- <div class="time-unit__bot"></div> -->
-    </div>
-    <div class="time-unit__label">
-      Seconds
-    </div>
-  </div>
-</main>
-<!-- footer -->
-<footer>
-  <img src="images/pattern-hills.svg" alt="hills" class="hills" />
-</footer>
-  
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  </body>
 </html>
