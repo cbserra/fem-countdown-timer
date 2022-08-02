@@ -1,0 +1,66 @@
+/* http://localhost:5173/dist/output.css?t=1658927034431 */
+
+@layer components {
+  .simple-timer {
+    @apply flex items-center justify-center gap-x-4;
+  }
+
+  .time-unit-container {
+    @apply flex h-full w-full flex-col items-center justify-center gap-y-4 overflow-hidden;
+  }
+
+  .time-unit__value-container {
+    @apply relative flex flex-col items-center justify-center rounded-[4px] bg-dark-desaturated-blue;
+    /* @apply after:absolute after:-bottom-2 after:-z-50 after:h-8 after:w-full after:rounded-lg after:border-b-4 after:border-very-dark-mostly-black-blue after:bg-very-dark-mostly-black-blue; */
+  }
+
+  .time-unit__top {
+    @apply relative bg-very-dark-mostly-black-blue bg-opacity-20;
+    /* @apply before:absolute before:h-1/2 before:w-full; */
+    /* mix-blend-mode: normal;
+      border-radius: 0px 0px 4px 4px;
+      transform: matrix(1, 0, 0, -1, 0, 0); */
+  }
+
+  .time-unit__value {
+    @apply flex w-full px-[1.45rem] py-[1.75rem] text-center font-mono text-3xl text-time font-bold leading-none text-soft-red;
+    @apply before:absolute before:left-0 before:top-0 before:h-1/2 before:w-full before:rounded-tl-[4px] before:rounded-tr-[4px] before:border-b-[1px] before:border-b-black before:border-opacity-20 before:bg-black before:bg-opacity-20;
+
+    transform: rotateX(0);
+    transition: 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .time-unit__value--flipped {
+    animation-name: num-flip;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: normal;
+  }
+
+  .time-unit__value--flipped:after {
+    transform: rotateX(0);
+    transition: 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .time-unit__line {
+    @apply absolute;
+    @apply z-50 h-[1px] w-full;
+    @apply before:absolute before:-top-[3px] before:-left-[3px] before:h-[6px] before:w-[6px] before:rounded-full before:bg-very-dark-mostly-black-blue;
+    @apply after:absolute after:-top-[3px] after:-right-[3px] after:h-[6px] after:w-[6px] after:rounded-full after:bg-very-dark-mostly-black-blue;
+    /* @apply  before:h-1/2 before:w-full; */
+    /* mix-blend-mode: normal;
+      border-radius: 0px 0px 4px 4px;
+      transform: matrix(1, 0, 0, -1, 0, 0); */
+  }
+
+  .time-unit__bot {
+    @apply absolute -bottom-2 -z-50 h-8 w-full rounded-lg border-b-4 border-very-dark-mostly-black-blue bg-very-dark-mostly-black-blue;
+  }
+
+  .time-unit__label {
+    @apply text-center text-unit font-bold uppercase text-grayish-blue;
+  }
+}

@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@700&family=Red+Hat+Text:wght@700&display=swap");
+
+@layer base {
+  html,
+  body {
+    @apply m-0 p-0 text-base font-bold antialiased;
+  }
+
+  body {
+    @apply flex min-h-screen w-full flex-col items-center justify-between gap-y-14 bg-very-dark-blue bg-stars text-white;
+  }
+
+  h1 {
+    @apply flex w-full flex-grow items-end justify-center px-6 text-center text-heading uppercase;
+  }
+
+  main {
+    @apply flex w-full max-w-[68.8rem] flex-grow items-start justify-center gap-x-[1.6rem] px-6;
+  }
+
+  footer {
+    @apply flex overflow-hidden bg-hills;
+  }
+  footer img {
+    /* @apply object-cover object-right h-40 w-auto; */
+  }
+}
