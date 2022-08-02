@@ -1,9 +1,34 @@
 // import "./style.css";
+
 const addDays = (date, days) => {
   const newDate = new Date(date.valueOf());
   newDate.setDate(newDate.getDate() + days);
   return newDate;
 };
+
+const toStringAndPad = (num) => {
+  return num.toString().padStart(2, "0");
+};
+
+function toDaysFormatted(distance) {
+  return toStringAndPad(Math.floor(distance / MILLIS_IN_DAY));
+}
+
+function toHoursFormatted(distance) {
+  return toStringAndPad(
+    Math.floor((distance % MILLIS_IN_DAY) / MILLIS_IN_HOUR)
+  );
+}
+function toMinutesFormatted(distance) {
+  return toStringAndPad(
+    Math.floor((distance % MILLIS_IN_HOUR) / MILLIS_IN_MINUTE)
+  );
+}
+function toSecondsFormatted(distance) {
+  return toStringAndPad(
+    Math.floor((distance % MILLIS_IN_MINUTE) / MILLIS_IN_SECOND)
+  );
+}
 
 const TWO_WEEKS_AHEAD = addDays(new Date(), 14).getTime();
 
@@ -30,16 +55,11 @@ const runCountdownTimer = function () {
   setInterval(function () {
     // const now = new Date().getTime();
     var distance = COUNT_DOWN_DATE - Date.now();
-    var days = Math.floor(distance / MILLIS_IN_DAY).toString();
-    var hours = Math.floor(
-      (distance % MILLIS_IN_DAY) / MILLIS_IN_HOUR
-    ).toString();
-    var minutes = Math.floor(
-      (distance % MILLIS_IN_HOUR) / MILLIS_IN_MINUTE
-    ).toString();
-    var seconds = Math.floor(
-      (distance % MILLIS_IN_MINUTE) / MILLIS_IN_SECOND
-    ).toString();
+    // var days = Math.floor(distance / MILLIS_IN_DAY).toString();
+    var days = toDaysFormatted(distance);
+    var hours = toHoursFormatted(distance);
+    var minutes = toMinutesFormatted(distance);
+    var seconds = toSecondsFormatted(distance);
     if (daysEl) {
       daysEl.innerHTML = days;
     }
