@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --host",
-    "build": "npx esbuild --bundle ./src/*.ts --outdir=./dist",
+    "build": "vite build",
     "test": "jest --runInBand",
     "test:coverage": "jest --runInBand --coverage",
-    "lint:scripts": "eslint . --ext .ts",
+    "lint:scripts": "eslint . --ext .js",
     "lint:styles": "stylelint ./**/*.{css,scss}",
     "lint": "yarn lint:scripts && yarn lint:styles",
     "commit": "cz",
