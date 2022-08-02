@@ -11,25 +11,30 @@
   }
 
   body {
-    @apply flex min-h-screen w-full flex-col items-center justify-center bg-very-dark-blue bg-stars text-white;
+    @apply flex min-h-screen w-full flex-col items-center justify-center gap-y-[5.4rem] bg-very-dark-blue bg-stars text-white;
   }
 
   h1 {
-    @apply flex w-full flex-grow items-end justify-center px-6 text-center text-heading uppercase;
+    @apply flex w-full  items-end justify-center px-6 text-center text-heading uppercase;
+    /* @apply flex-grow; */
   }
 
   main {
-    @apply flex w-full max-w-[68.8rem] flex-grow items-start justify-center gap-x-[1.6rem] px-6;
+    @apply flex w-full max-w-[68.8rem]  items-start justify-center gap-x-[1.6rem] px-6;
+    /* @apply flex-grow; */
   }
 
   footer {
-    @apply flex overflow-hidden;
+    @apply flex h-full w-full items-center justify-center;
+    background-image: url("../images/pattern-hills.svg");
+    background-size: cover;
   }
   footer img {
-    @apply object-cover object-center;
+    height: 168px;
+    width: 971px;
+    /* @apply object-cover object-center; */
   }
 }
-
 @layer components {
   .time-unit-container {
     @apply flex h-full w-full flex-col items-center justify-center gap-y-4;
@@ -85,16 +90,6 @@
     @apply text-center text-unit font-bold uppercase text-grayish-blue;
   }
 }
-
-#app {
-  color: #2c3e50;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  margin-top: 60px;
-  text-align: center;
-}
-
 @keyframes num-flip {
   0% {
     transform: rotateX(0);
