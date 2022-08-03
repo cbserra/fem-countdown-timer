@@ -25,9 +25,31 @@
   footer {
     @apply flex overflow-hidden;
   }
-  footer img {
+  footer > img {
     @apply object-cover object-center;
   }
+  /* html,body {
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  h1 {
+    text-transform: uppercase;
+    flex: 1 0 0;
+  }
+  main {
+    height: 100%;
+  }
+  footer {
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: max-content;
+  } */
 }
 
 @layer components {
@@ -178,7 +200,7 @@
     /* background: #222; */
     padding: 0.25em 0.25em;
     border-radius: 0.15em 0.15em 0 0;
-    backface-visiblity: hidden;
+    backface-visibility: hidden;
     transform-style: preserve-3d;
     width: 1.8em;
     transform: translateZ(0);
@@ -309,6 +331,37 @@
   .time-unit__label {
     @apply text-center text-unit font-bold uppercase text-grayish-blue;
   }
+
+  /* .flip-clock {
+  display: inline-flex;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  position: relative;
+}
+.flip-clock__piece {
+  display: flex;
+  margin: 0 5px;
+  max-width: 15rem;
+  max-height: 15rem;
+}
+  .card__top,.card__bottom,.card__back:before,.card__back:after {
+  height: 100%;
+  width: 100%;
+  }
+  .card__bottom {
+  position: relative;
+  overflow: hidden;
+  }
+  .card__bottom:after {
+  margin-top: -.72em;
+  }
+  .card__back {
+  position: relative;
+  }
+
+  .card__back:before {
+  position: absolute;
+} */
 }
 
 @-webkit-keyframes flipTop {
