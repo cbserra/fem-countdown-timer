@@ -19,7 +19,7 @@
   }
 
   footer {
-    @apply flex overflow-hidden bg-hills;
+    @apply bg-hills flex overflow-hidden;
   }
   footer img {
     /* @apply object-cover object-right h-40 w-auto; */
