@@ -22,15 +22,6 @@ const INIT_UNIT_DELTA_VALUES: CountdownUnitValues = {
   [TimeUnitKey.seconds]: INIT_DELTA_VALUES,
 };
 
-// const INIT_HTML_ELEMENTS: CountdownElements = {
-//   [CountdownElementKey.outerContainer]: null,
-//   [CountdownElementKey.innerContainer]: null,
-//   [CountdownElementKey.topElement]: null,
-//   [CountdownElementKey.bottomElement]: null,
-//   [CountdownElementKey.backElement]: null,
-//   [CountdownElementKey.backBottomElement]: null,
-// };
-
 const INIT_UNIT_HTML_ELEMENTS: CountdownUnitElements = {
   [TimeUnitKey.days]: getCountdownElements(TimeUnitKey.days),
   [TimeUnitKey.hours]: getCountdownElements(TimeUnitKey.hours),
@@ -38,29 +29,12 @@ const INIT_UNIT_HTML_ELEMENTS: CountdownUnitElements = {
   [TimeUnitKey.seconds]: getCountdownElements(TimeUnitKey.seconds),
 } as CountdownUnitElements;
 
-// const countdownTimer = new CountdownTimer(
-//   TWO_WEEKS_AHEAD,
-//   Date.now(),
-//   INIT_UNIT_HTML_ELEMENTS,
-//   INIT_UNIT_DELTA_VALUES
-// );
 updateTimer();
 
-// function updateTimer(requestTimestamp?: number): void {
 function updateTimer(): void {
   console.count("updateTimer");
-  // const timeCalled = requestTimestamp || Date.now();
-  // const timeInterval = requestAnimationFrame(updateTimer);
-
-  // const timeInterval = requestAnimationFrame(updateTimer);
-  // const distance = getUpdatedDistance(countdownTimer.$targetDate);
-  // if (distance < 0) {
-  //   cancelAnimationFrame(timeInterval);
-  //   return;
-  // }
 
   setTimeout(() => update(), 500);
-  // countdownTimer.update();
 }
 
 const DATA_VAL_ATTR = "data-value";
@@ -70,26 +44,9 @@ const TOGGLE_ANIMATION_CLASS = "flip";
 // export class CountdownTimer {
 const targetDate: number = TWO_WEEKS_AHEAD;
 const currentDate: number = Date.now();
-//   private distance: number;
 const unitElements: CountdownUnitElements = INIT_UNIT_HTML_ELEMENTS;
 const unitValues: CountdownUnitValues = INIT_UNIT_DELTA_VALUES;
 
-// constructor(
-//   targetDate: number,
-//   currentDate: number,
-//   unitElements: CountdownUnitElements,
-//   unitValues: CountdownUnitValues
-// ) {
-//   targetDate = targetDate;
-//   currentDate = currentDate || Date.now();
-//   // distance = getUpdatedDistance(targetDate);
-//   unitElements = unitElements;
-//   unitValues = unitValues;
-
-//   _init();
-// }
-
-//   public update(distance?: number): void {
 function update(): void {
   // console.count("update");
   const timeInterval = requestAnimationFrame(() => update());
@@ -127,51 +84,6 @@ function _updateTimeUnits(unitValues: CountdownUnitValues, distance: number) {
   );
 }
 
-// private _updateCountdownUi(): void {
-//   Object.keys(unitElements).forEach((unit) => {
-//     const elements = unitElements[unit as keyof CountdownUnitElements];
-//     const values = unitValues[unit as keyof CountdownUnitValues];
-//     if (elements.topElement && values.currentValue !== values.previousValue) {
-//       elements.topElement.innerText = values.previousValue;
-//       setAttribute(
-//         elements.bottomElement,
-//         DATA_VAL_ATTR,
-//         values.currentValue
-//       );
-//       setAttribute(elements.backElement, DATA_VAL_ATTR, values.currentValue);
-//       setAttribute(
-//         elements.backBottomElement,
-//         DATA_VAL_ATTR,
-//         values.previousValue
-//       );
-
-//       _toggleAnimationClass(elements.outerContainer as HTMLElement);
-
-//       // setTimeout(update, 1_000);
-//       // setTimeout(() => update(), 500);
-//       // prevDays = currentDays;
-//     }
-//   });
-// }
-// private _toggleAnimationClass(outerContainer: HTMLElement): void {
-//   outerContainer.classList.remove(TOGGLE_ANIMATION_CLASS);
-//   // Updates 'offsetWidth' to force a reflow
-//   void outerContainer.offsetWidth;
-//   outerContainer.classList.add(TOGGLE_ANIMATION_CLASS);
-// }
-
-// private _getUpdatedCountdownValues(
-//   deltaValues: DeltaValues,
-//   formattedValue: string
-// ): DeltaValues {
-//   const updatedDeltas = {
-//     previousValue: deltaValues.currentValue,
-//     currentValue: formattedValue,
-//   };
-//   return updatedDeltas;
-// }
-// }
-
 function _updateCountdownUi(
   unitElements: CountdownUnitElements,
   unitValues: CountdownUnitValues
@@ -180,20 +92,16 @@ function _updateCountdownUi(
     const elements = unitElements[unit as keyof CountdownUnitElements];
     const values = unitValues[unit as keyof CountdownUnitValues];
     if (elements.topElement && values.currentValue !== values.previousValue) {
-      elements.topElement.innerText = values.previousValue;
-      setAttribute(elements.bottomElement, DATA_VAL_ATTR, values.currentValue);
-      setAttribute(elements.backElement, DATA_VAL_ATTR, values.currentValue);
+      elements.topElement.innerText = values.currentValue;
+      setAttribute(elements.bottomElement, DATA_VAL_ATTR, values.previousValue);
+      setAttribute(elements.backElement, DATA_VAL_ATTR, values.previousValue);
       setAttribute(
         elements.backBottomElement,
         DATA_VAL_ATTR,
-        values.previousValue
+        values.currentValue
       );
 
       _toggleAnimationClass(elements.outerContainer as HTMLElement);
-
-      // setTimeout(update, 1_000);
-      // setTimeout(() => update(), 500);
-      // prevDays = currentDays;
     }
   });
 }

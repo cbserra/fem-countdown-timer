@@ -20,15 +20,21 @@ module.exports = {
       },
       fontSize: {
         base: "62.5%",
-        heading: [
-          "1.8rem",
-          {
-            lineHeight: "2.4rem",
-            letterSpacing: "6.14px",
-          },
+        heading: ["1.8rem", { lineHeight: "2.4rem", letterSpacing: "6.14px" }],
+        "heading-lg": [
+          "2.2rem",
+          { lineHeight: "2.9rem", letterSpacing: "7.5px" },
         ],
         time: ["3.6rem", { lineHeight: "7.1rem", letterSpacing: "-1.08px" }],
+        "time-lg": [
+          "8.0rem",
+          { lineHeight: "7.1rem", letterSpacing: "-2.4px" },
+        ],
         unit: [".7rem", { lineHeight: ".9rem", letterSpacing: "2.95937px" }],
+        "unit-lg": [
+          "1.4rem",
+          { lineHeight: "1.9rem", letterSpacing: "5.91875px" },
+        ],
       },
       backgroundImage: {
         stars: "url('../images/bg-stars.svg')",

@@ -127,9 +127,9 @@ export class CountdownTimer {
         setAttribute(
           elements.bottomElement,
           DATA_VAL_ATTR,
-          values.currentValue
+          values.previousValue
         );
-        setAttribute(elements.backElement, DATA_VAL_ATTR, values.currentValue);
+        setAttribute(elements.backElement, DATA_VAL_ATTR, values.previousValue);
         setAttribute(
           elements.backBottomElement,
           DATA_VAL_ATTR,
@@ -144,6 +144,7 @@ export class CountdownTimer {
       }
     });
   }
+
   private _toggleAnimationClass(outerContainer: HTMLElement): void {
     outerContainer.classList.remove(TOGGLE_ANIMATION_CLASS);
     // Updates 'offsetWidth' to force a reflow
