@@ -1,12 +1,11 @@
 // import "./style.css";
 
-const COUNT_DOWN_INTERVAL = 1000;
+const COUNT_DOWN_INTERVAL = 500;
 const HOURS_IN_DAY = 24;
 const MINUTES_IN_HOUR = 60;
 const SECONDS_IN_MINUTE = 60;
 const MILLIS_IN_SECOND = 1000;
-const MILLIS_IN_DAY =
-  MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY;
+const MILLIS_IN_DAY = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY;
 const MILLIS_IN_HOUR = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR;
 const MILLIS_IN_MINUTE = MILLIS_IN_SECOND * SECONDS_IN_MINUTE;
 
@@ -17,51 +16,34 @@ console.log(`🚀 ~ file: index.ts ~ line 17 ~ daysBottomEl`, daysBottomEl);
 const daysBackEl = daysEl?.parentElement?.querySelector(".time-unit__back");
 console.log(`🚀 ~ file: index.ts ~ line 19 ~ daysBackEl`, daysBackEl);
 const daysBackBottomEl = daysBackEl?.querySelector(".time-unit__bottom");
-console.log(
-  `🚀 ~ file: index.ts ~ line 21 ~ daysBackBottomEl`,
-  daysBackBottomEl
-);
+console.log(`🚀 ~ file: index.ts ~ line 21 ~ daysBackBottomEl`, daysBackBottomEl);
 
 const hoursEl = document.getElementById("hours");
 console.log(`🚀 ~ file: index.ts ~ line 55 ~ hoursEl`, hoursEl);
-const hoursBottomEl =
-  hoursEl?.parentElement?.querySelector(".time-unit__bottom");
+const hoursBottomEl = hoursEl?.parentElement?.querySelector(".time-unit__bottom");
 console.log(`🚀 ~ file: index.ts ~ line 55 ~ hoursBottomEl`, hoursBottomEl);
 const hoursBackEl = hoursEl?.parentElement?.querySelector(".time-unit__back");
 console.log(`🚀 ~ file: index.ts ~ line 55 ~ hoursBackEl`, hoursBackEl);
 const hoursBackBottomEl = hoursBackEl?.querySelector(".time-unit__bottom");
-console.log(
-  `🚀 ~ file: index.ts ~ line 55 ~ hoursBackBottomEl`,
-  hoursBackBottomEl
-);
+console.log(`🚀 ~ file: index.ts ~ line 55 ~ hoursBackBottomEl`, hoursBackBottomEl);
 
 const minutesEl = document.getElementById("minutes");
 console.log(`🚀 ~ file: index.ts ~ line 55 ~ minutesEl`, minutesEl);
-const minutesBottomEl =
-  minutesEl?.parentElement?.querySelector(".time-unit__bottom");
+const minutesBottomEl = minutesEl?.parentElement?.querySelector(".time-unit__bottom");
 console.log(`🚀 ~ file: index.ts ~ line 55 ~ minutesBottomEl`, minutesBottomEl);
-const minutesBackEl =
-  minutesEl?.parentElement?.querySelector(".time-unit__back");
+const minutesBackEl = minutesEl?.parentElement?.querySelector(".time-unit__back");
 console.log(`🚀 ~ file: index.ts ~ line 55 ~ minutesBackEl`, minutesBackEl);
 const minutesBackBottomEl = minutesBackEl?.querySelector(".time-unit__bottom");
-console.log(
-  `🚀 ~ file: index.ts ~ line 55 ~ minutesBackBottomEl`,
-  minutesBackBottomEl
-);
+console.log(`🚀 ~ file: index.ts ~ line 55 ~ minutesBackBottomEl`, minutesBackBottomEl);
 
 const secondsEl = document.getElementById("seconds");
 console.log(`🚀 ~ file: index.ts ~ line 55 ~ secondsEl`, secondsEl);
-const secondsBottomEl =
-  secondsEl?.parentElement?.querySelector(".time-unit__bottom");
+const secondsBottomEl = secondsEl?.parentElement?.querySelector(".time-unit__bottom");
 console.log(`🚀 ~ file: index.ts ~ line 55 ~ secondsBottomEl`, secondsBottomEl);
-const secondsBackEl =
-  secondsEl?.parentElement?.querySelector(".time-unit__back");
+const secondsBackEl = secondsEl?.parentElement?.querySelector(".time-unit__back");
 console.log(`🚀 ~ file: index.ts ~ line 55 ~ secondsBackEl`, secondsBackEl);
 const secondsBackBottomEl = secondsBackEl?.querySelector(".time-unit__bottom");
-console.log(
-  `🚀 ~ file: index.ts ~ line 55 ~ secondsBackBottomEl`,
-  secondsBackBottomEl
-);
+console.log(`🚀 ~ file: index.ts ~ line 55 ~ secondsBackBottomEl`, secondsBackBottomEl);
 
 const addDays = (date: Date, days: number) => {
   const newDate = new Date(date.valueOf());
@@ -84,15 +66,9 @@ const runCountdownTimer = () => {
     const distance = twoWeeksAhead - Date.now();
     console.log(distance);
     currentDays = toStringAndPad(Math.floor(distance / MILLIS_IN_DAY));
-    currentHours = toStringAndPad(
-      Math.floor((distance % MILLIS_IN_DAY) / MILLIS_IN_HOUR)
-    );
-    currentMinutes = toStringAndPad(
-      Math.floor((distance % MILLIS_IN_HOUR) / MILLIS_IN_MINUTE)
-    );
-    currentSeconds = toStringAndPad(
-      Math.floor((distance % MILLIS_IN_MINUTE) / MILLIS_IN_SECOND)
-    );
+    currentHours = toStringAndPad(Math.floor((distance % MILLIS_IN_DAY) / MILLIS_IN_HOUR));
+    currentMinutes = toStringAndPad(Math.floor((distance % MILLIS_IN_HOUR) / MILLIS_IN_MINUTE));
+    currentSeconds = toStringAndPad(Math.floor((distance % MILLIS_IN_MINUTE) / MILLIS_IN_SECOND));
 
     if (daysEl && prevDays !== currentDays) {
       //   daysEl.classList.add("time-unit__value--flipped");
@@ -137,14 +113,12 @@ const toStringAndPad = (num: number) => {
   return num.toString().padStart(2, "0");
 };
 
-const removeClassAfterTimeout = (
-  _el: HTMLElement,
-  _className: string,
-  _timeout: number
-) => {
+const removeClassAfterTimeout = (_el: HTMLElement, _className: string, _timeout: number) => {
   //   setTimeout(() => {
   //     el.classList.remove(className);
   //   }, timeout);
 };
 
 runCountdownTimer();
+
+export {};
